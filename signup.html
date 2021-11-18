@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">		
+        function validate(){
+            if(document.loginform.firstname.value == ""){
+                alert("Your First Name is Empty");
+                return false;
+            }
+            if(document.loginform.lastname.value == ""){
+                alert("Your Last Name is Empty");
+                return false;
+            }
+            if(document.getElementById('password').value == ""){
+                alert("Your Password is Empty")
+                return false;
+            }
+            if(document.getElementById('confirmpassword').value == ""){
+                alert("Please confirm you password")
+                return false;
+            }
+            if(document.getElementById('password').value != document.getElementById('confirmpassword').value){
+                alert("Password is not matching")
+                return false;
+            }
+
+            // location.window.open("afterlogin.html");
+            window.open("login_form.html");
+            window.close();
+    
+            return true;
+        }
+    
+    
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="inner-header">
+            <div class="logo">
+                AK - Company
+            </div>
+            <div class="header-link">
+                <a href="#">Help</a>
+            </div>
+            <div class="header-link">
+                <a href="index.html">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-form">
+        <h1>Details</h1>
+        <form name="loginform" action="#" method="get" onsubmit="return validate()">
+            <p>First Name</p>
+            <input type="text" name="firstname" placeholder="First Name" id="firstname">
+            <p>Last Name</p>
+            <input type="text" name="lastname" placeholder="Last Name" id="lastname">
+            <p>Create Password</p>
+            <input type="password" name="password" placeholder="Password" id="password">
+            <p>Confirm Password</p>
+            <input type="password" name="confirmpassword" placeholder="Confirm Password" id="confirmpassword">
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>

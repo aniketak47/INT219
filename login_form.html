@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">		
+        function validate(){
+            if(document.loginform.username.value == ""){
+                alert("Your Username is Empty");
+                return false;
+            }
+            if(document.getElementById('password').value == ""){
+                alert("Your Password is Empty")
+                return false;
+            }
+
+            // location.window.open("afterlogin.html");
+            window.open("afterlogin.html");
+            window.close();
+    
+            // return true;
+        }
+    
+    
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="inner-header">
+            <div class="logo">
+                AK - Company
+            </div>
+            <div class="header-link">
+                <a href="signup.html">Sign up</a>
+            </div>
+            <div class="header-link">
+                <a href="index.html">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-form">
+        <h1>Login Details</h1>
+        <form name="loginform" action="#" method="get" onsubmit="return validate()">
+            <p>User Name</p>
+            <input type="text" name="user" placeholder="User Name" id="username">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Password" id="password">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
